@@ -1,0 +1,9 @@
+kick_message: "§aSwenlyAntibot: §fВы не прошли проверку!"
+kick_delay: 15
+ping_message: "§aSwenlyAntibot: §fУ вас слишком высокий пинг!"
+max_ping: 1000
+antiproxy_message: "§aSwenlyAntibot: §fВаш айпи слишком подозрителен!"
+antiproxy: 1 # 0 - false, 1 - true
+sucsess: "§aSwenlyAntibot: §fПроверка пройдена! \n §fИнформация о плагине: §a/antibot"
+Antibot_title_message: "§aSwenlyAntibot"
+Antibot_subtitle_message: "§fНапиши в чат ответ на решение: %first_int% + %second_int% = ?"

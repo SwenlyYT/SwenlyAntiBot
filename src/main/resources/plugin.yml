@@ -1,0 +1,23 @@
+name: SwenlyAntiBot
+version: '${version}'
+main: ru.swenly.swenlyantibot.SwenlyAntiBot
+api-version: 1.16
+authors: [ Swenly ]
+commands:
+  ping:
+    permission: swenlyantibot.ping
+    permission-message:
+      §cОшибка! §fУ вас недостаточно прав!
+    description: /ping [player]
+  antibot:
+    description: /antibot
+    aliases: [swenlyantibot, sab]
+  bots_kick:
+    permission: swenlyantibot.bots_kick
+    permission-message:
+      §cОшибка! §fУ вас недостаточно прав!
+    aliases:
+      - kick_bot
+      - bot_kick
+      - kick_bots
+    usage: /bots_kick <text>
