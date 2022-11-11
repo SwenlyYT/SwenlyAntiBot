@@ -1,5 +1,6 @@
 package ru.swenly.swenlyantibot.events;
 
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -11,6 +12,21 @@ import org.bukkit.event.player.*;
 import ru.swenly.swenlyantibot.SwenlyAntiBot;
 
 public class AntiActions implements Listener {
+
+    @EventHandler
+    public void onMoveEvent(PlayerMoveEvent event) {
+        Player player = event.getPlayer();
+        Location posFrom = event.getFrom();
+        Location posTo = event.getTo();
+
+        for (String captcha : SwenlyAntiBot.captchas) {
+            if (captcha.contains(player.getName())) {
+                if (posFrom.getX() != posTo.getX() || posFrom.getZ() != posTo.getZ()) {
+                    event.setCancelled(true);
+                }
+            }
+        }
+    }
 
     @EventHandler
     public void onPlayerUse(PlayerInteractEvent event) {
@@ -26,17 +42,6 @@ public class AntiActions implements Listener {
 
     @EventHandler
     public void onPlayerCommand(PlayerCommandPreprocessEvent event) {
-        Player player = event.getPlayer();
-
-        for (String captcha : SwenlyAntiBot.captchas) {
-            if (captcha.contains(player.getName())) {
-                event.setCancelled(true);
-            }
-        }
-    }
-
-    @EventHandler
-    public void onMoveEvent(PlayerMoveEvent event) {
         Player player = event.getPlayer();
 
         for (String captcha : SwenlyAntiBot.captchas) {
