@@ -21,7 +21,7 @@ import java.util.Random;
 
 public class OnPlayer implements Listener {
     private final JavaPlugin plugin = SwenlyAntiBot.getPlugin(SwenlyAntiBot.class);
-    File path = SwenlyAntiBot.getPlugin(SwenlyAntiBot.class).getDataFolder();
+    File path = plugin.getDataFolder();
     String full_path = path + "/who_resolved.json";
     JSONObject main_obj = new JSONObject();
     JSONParser jsonParser = new JSONParser();
@@ -43,6 +43,7 @@ public class OnPlayer implements Listener {
             }
         }
 
+        System.out.println(SwenlyAntiBot.antiproxy);
         if (SwenlyAntiBot.antiproxy == 1) {
             if (CheckProxy.isProxy(player.getAddress().getAddress().getHostAddress())) {
                 player.kickPlayer(SwenlyAntiBot.antiproxy_message);

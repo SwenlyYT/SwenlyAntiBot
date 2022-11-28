@@ -23,28 +23,33 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class ParsingProxy extends BukkitRunnable {
-    String[] ProxyUrls = {"https:raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies-socks4.txt",
-        "https:raw.githubusercontent.com/saschazesiger/Free-Proxies/master/proxies/socks4.txt",
-        "https:raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt",
-        "https:raw.githubusercontent.com/ShiftyTR/Proxy-List/master/socks4.txt",
-        "https:api.proxyscrape.com/v2/?request=displayproxies&protocol=socks4",
-        "https:raw.githubusercontent.com/mmpx12/proxy-list/master/socks4.txt",
-        "https:www.proxy-list.download/api/v1/get?type=socks4",
-        "https:openproxylist.xyz/socks4.txt",
-        "https:proxyspace.pro/socks4.txt",
+    String[] ProxyUrls = {"https://raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies-socks4.txt",
+        "https://raw.githubusercontent.com/saschazesiger/Free-Proxies/master/proxies/socks4.txt",
+        "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt",
+        "https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/socks4.txt",
+        "https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks4",
+        "https://raw.githubusercontent.com/mmpx12/proxy-list/master/socks4.txt",
+        "https://www.proxy-list.download/api/v1/get?type=socks4",
+        "https://openproxylist.xyz/socks4.txt",
+        "https://proxyspace.pro/socks4.txt",
         //socks5
-        "https:raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies-socks5.txt",
-        "https:raw.githubusercontent.com/saschazesiger/Free-Proxies/master/proxies/socks5.txt",
-        "https:raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt",
-        "https:raw.githubusercontent.com/ShiftyTR/Proxy-List/master/socks5.txt",
-        "https:api.proxyscrape.com/v2/?request=displayproxies&protocol=socks5",
-        "https:raw.githubusercontent.com/mmpx12/proxy-list/master/socks5.txt",
-        "https:www.proxy-list.download/api/v1/get?type=socks5",
-        "https:openproxylist.xyz/socks5.txt",
-        "https:proxyspace.pro/socks5.txt",
-        // "https:cdn.discordapp.com/attachments/1014241422997721249/1014370207524982834/socks4.txt",
-        // "https:cdn.discordapp.com/attachments/1014241422997721249/1014370233663893504/socks5.txt",
-        "https:proxyx.ru/700.txt"
+        "https://raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies-socks5.txt",
+        "https://raw.githubusercontent.com/saschazesiger/Free-Proxies/master/proxies/socks5.txt",
+        "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt",
+        "https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/socks5.txt",
+        "https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks5",
+        "https://raw.githubusercontent.com/mmpx12/proxy-list/master/socks5.txt",
+        "https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/socks5.txt",
+        "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt",
+        "https://raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies-socks5.txt",
+        "https://raw.githubusercontent.com/hookzof/socks5_list/master/proxy.txt",
+	"https://raw.githubusercontent.com/mmpx12/proxy-list/master/socks5.txt",
+        "https://www.proxy-list.download/api/v1/get?type=socks5",
+        "https://openproxylist.xyz/socks5.txt",
+        "https://proxyspace.pro/socks5.txt",
+        // "https://cdn.discordapp.com/attachments/1014241422997721249/1014370207524982834/socks4.txt",
+        // "https://cdn.discordapp.com/attachments/1014241422997721249/1014370233663893504/socks5.txt",
+        "https://proxyx.ru/700.txt"
     };
 
     public static ArrayList<String> all_proxies = new ArrayList<String>();
@@ -55,7 +60,7 @@ public class ParsingProxy extends BukkitRunnable {
 
         for (String url : Arrays.asList(ProxyUrls)) {
             try {
-                url = "https://" + url.replaceAll("https:", "");
+                url = "https:////" + url.replaceAll("https://", "");
                 System.out.println(url);
 
                 HttpClient httpClient = new DefaultHttpClient();

@@ -52,7 +52,7 @@ public final class SwenlyAntiBot extends JavaPlugin {
         kick_delay = 20L * configload.getInt("kick_delay");
         ping_message = configload.getString("ping_message");
         max_ping = configload.getInt("max_ping");
-        ping_message = configload.getString("antiproxy_message");
+        antiproxy_message = configload.getString("antiproxy_message");
         antiproxy = configload.getInt("antiproxy");
         sucsess = configload.getString("sucsess");
         Antibot_title_message = configload.getString("Antibot_title_message");
